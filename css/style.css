@@ -75,6 +75,10 @@
   z-index: 1;
 }
 
+.burger-button {
+  display: none;
+}
+
 .menu-list {
   display: flex;
 }
@@ -142,15 +146,16 @@
 .trends-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .trend {
   display: flex;
   width: calc(100%/4 - 3px);
+  height: 320px;
   flex-grow: 1;
   margin-right: 4px;
-  padding: 158px 22px 16px;
+  align-items: flex-end;
+  padding: 0 22px 16px;
   position: relative;
 }
 
@@ -243,7 +248,8 @@
 }
 
 .preview img {
-  width: 380px;
+  max-width: 380px;
+  width: 19em;
   margin-right: 30px;
 }
 
@@ -598,7 +604,7 @@
 }
 
 .container-footer {
-  width: 1170px;
+  width: 100%;
   background-color: #f4f7f6;
 
   margin-left: auto;
@@ -668,7 +674,7 @@
 }
 
 ._hidden {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .popup {
@@ -677,6 +683,9 @@
   position: fixed;
   display: none;
   top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 2;
   background: rgba(0, 0, 0, 0.6);
 }
@@ -688,8 +697,8 @@
 }
 
 .form-popup {
-  width: 420px;
-  max-height: 100vh;
+  max-width: 420px;
+  max-height: 100%;
   position: relative;
   background-color: #ffffff;
 
@@ -754,14 +763,12 @@
   background-repeat: no-repeat;
   background-position: right 15px center;
   background-size: 11px;
+
+  outline: none;
 }
 
 .mailing-text {
   margin-bottom: 10px;
-}
-
-.form {
-  margin-bottom: 30px;
 }
 
 .radio-group-text::before {
@@ -795,6 +802,10 @@
   margin-right: 10px;
 }
 
+.mailing-text, .field-text {
+  margin-top: 20px;
+}
+
 .field {
   box-sizing: border-box;
   border: none;
@@ -810,6 +821,8 @@
 
   padding: 15px 22px;
   margin-top: 10px;
+
+  outline: none;
 }
 
 .button-send {
@@ -825,3 +838,306 @@
   font-weight: 700;
   cursor: pointer;
 }
+
+/* адаптив на планшет и телефон*/
+@media (min-width: 641px) {
+  .trends-list {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 1199px) {
+  .heading {
+    width: 100%;
+  }
+
+  .section-trends {
+    width: 100%;
+  }
+
+  .menu-list{
+    display: none;
+  }
+
+  .burger-button {
+    width: 23px;
+    height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+  }
+
+  .burger {
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    position: relative;
+    z-index: 1;
+  }
+
+  .burger::before {
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    position: absolute;
+    top: -7px;
+    left: 0;
+    content: '';
+    z-index: 1;
+    border: none;
+  }
+
+  .burger::after {
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    content: '';
+    z-index: 1;
+    border: none;
+  }
+
+  .preview {
+    flex-wrap: wrap;
+  }
+
+  .text-link::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #eeeeee;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 23px;
+  }
+}
+
+
+@media (min-width: 641px) and (max-width: 1199px) {
+  .container {
+    max-width: 700px;
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  .heading {
+    font-size: 40px;
+  }
+
+  .header {
+    background-image: url(../images/banner-bg-tablet.jpg);
+  }
+
+  .trend {
+    flex-wrap: wrap;
+    width: calc(100%/2 - 3px);
+  }
+
+  .trend-title-link {
+    font-size: 17px;
+  }
+
+ .page {
+   width: 100%;
+   padding: 50px 35px;
+   margin-left: 0;
+   margin-right: 0;
+ }
+
+  .preview img {
+    margin-right: 0;
+  }
+
+  .subtitle {
+    font-size: 17px;
+  }
+
+  .img {
+    margin-bottom: 17px;
+  }
+
+  .section-goods {
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0 35px 50px;
+  }
+
+  .shop-items {
+    flex-wrap: wrap;
+  }
+
+  .shop-item {
+    width: calc(50% - 15px);
+    margin-bottom: 30px;
+  }
+
+  .shop-item:last-child {   /* тоже самое не знаю как сделать и у предпоследнего элемента */
+    margin-bottom: 0;
+  }
+
+  .shop {
+    width: calc(100%/2 - 50px);
+  }
+
+  .container-footer {
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1199px) and (orientation: portrait) {
+  .trend:nth-child(even) {
+    margin-right: 0;
+  }
+
+  .trend {
+    margin-bottom: 4px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1199px) and (orientation: landscape)  {
+  .trends-list {
+    flex-wrap: nowrap;
+  }
+
+  .trend:nth-child(n) {
+    margin-right: 4px;
+  }
+
+  .trend:last-child {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 30px 15px 220px;
+    margin-bottom: 45px;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .header {
+    background-image: url(../images/banner-mobile.jpg);
+  }
+
+  .logo {
+    width: 270px;
+    align-self: center;
+  }
+
+  .menu {
+    flex-direction: column;
+    margin-bottom: 45px;
+    height: 240px;
+    align-items: flex-end;
+  }
+
+  .burger-button {
+    order: -1;
+  }
+
+  .burger {
+    right: 0;
+  }
+
+  .heading {
+    font-size: 26px;
+  }
+
+  .trend {
+    flex-wrap: wrap;
+    margin-right: 0;
+    margin-bottom: 3px;
+  }
+
+  .trend:last-child {
+    margin-bottom: 0;
+  }
+
+  .trend-items {
+    padding-right: 25px;
+  }
+
+  .page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 45px 15px 50px;
+  }
+
+  .preview:nth-child(n+2) {
+    margin-top: 35px;
+  }
+
+  .preview img {
+    max-width: 330px;
+    width: 100vw;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .trend-subtitle, .headline-news, .headline-mail, .headline-tags, .headline-topics, .goods-title, .trend-title-link {
+    font-size: 16px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  .article {
+    margin-bottom: 25px;
+  }
+
+  .aside {
+    margin-top: 45px;
+    width: 100%;
+  }
+
+  .shop-items {
+    flex-wrap: wrap;
+  }
+
+  .shop-item {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .shop-item-title {
+    font-size: 17px;
+  }
+
+  .form-popup {
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 640px) and (orientation: portrait) {
+  .trend {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) and (orientation: landscape) {
+  .trend {
+    flex-wrap: wrap;
+    width: calc(100%/2 - 3px);
+  }
+
+  /* .trends-list {
+    flex-wrap: wrap;
+    width: 50%;
+  }
+} */
