@@ -23,6 +23,8 @@
             <li class="menu-list-item"><a href="#0" class="item-link">Темы</a></li>
             <li class="menu-list-item"><a href="#0" class="item-link">Контакты</a></li>
           </ul>
+
+          <button class="burger-button"><span class="burger"></span></button>
         </nav>
         <h1 class="heading">Блог о творчестве, спорте и образе жизни</h1>
       </div>
@@ -290,7 +292,7 @@
             <source srcset="images/shop-item-desk1.jpg"
                     media="(min-width: 1200px)">
             <source srcset="images/shop-item-tablet1.jpg"
-                    media="(min-width: 641px and max-width: 1199px)">
+                    media="(min-width: 641px) and (max-width: 1199px)">
             <source srcset="images/shop-item-mobile1.jpg"
                     media="(max-width: 640px)">
             <img src="images/shop-item-desk1.jpg" alt="диванная подушка">
@@ -315,10 +317,10 @@
             <source srcset="images/shop-item-desk2.jpg"
                     media="(min-width: 1200px)">
             <source srcset="images/shop-item-tablet2.jpg"
-                    media="(min-width: 641px and max-width: 1199px)">
+                    media="(min-width: 641px) and (max-width: 1199px)">
             <source srcset="images/shop-item-mobile2.jpg"
                     media="(max-width: 640px)">
-            <img src="images/shop-item-desk1.jpg" alt="кукла зайчик">
+            <img src="images/shop-item-desk2.jpg" alt="кукла зайчик">
           </picture>
           <div class="shop">
             <div class="shop-text">
@@ -339,10 +341,10 @@
             <source srcset="images/shop-item-desk3.jpg"
                     media="(min-width: 1200px)">
             <source srcset="images/shop-item-tablet3.jpg"
-                    media="(min-width: 641px and max-width: 1199px)">
+                    media="(min-width: 641px) and (max-width: 1199px)">
             <source srcset="images/shop-item-mobile3.jpg"
                     media="(max-width: 640px)">
-            <img src="images/shop-item-desk1.jpg" alt="шестиугольная рамка для украшения">
+            <img src="images/shop-item-desk3.jpg" alt="шестиугольная рамка для украшения">
           </picture>
           <div class="shop">
             <div class="shop-text">
@@ -404,12 +406,12 @@
 
     <!--popup-->
       <div class="popup shown _hidden">
+        <form class="form">
         <div class="form-popup">
           <button class="popup-close" type="button"><span class="popup-close-text">кнопка закрытия popup</span></button>
           <div class="popup-container">
             <h2 class="popup-title">Ваш фидбэк</h2>
 
-            <form class="form">
               <label>
                 <span class="popup-text">Как часто вы заходите на сайт?</span>
                 <select class="on-site-list">
@@ -418,10 +420,7 @@
                   <option>Раз в полгода</option>
                 </select>
               </label>
-            </form>
 
-
-            <form class="form">
               <div class="mailing-text">Вы подписаны на e-mail рассылку?</div>
               <label class="radio-group">
                 <input type="radio" name="radio-mailing" class="radio">
@@ -431,19 +430,15 @@
                 <input type="radio" name="radio-mailing" class="radio">
                 <span class="radio-group-text">Нет</span>
               </label>
-            </form>
 
-            <form class="form">
-              <span class="">Расскажите, какой контент вы хотели бы видеть на нашем сайте?</span>
+              <div class="field-text">Расскажите, какой контент вы хотели бы видеть на нашем сайте?</div>
               <textarea class="field textarea" placeholder="Может, больше рецептов?"></textarea>
-            </form>
 
             <button class="button-send" type="submit">Отправить</button>
           </div>
 
         </div>
-
-        </div>
+        </form>
       </div>
 
   </body>
