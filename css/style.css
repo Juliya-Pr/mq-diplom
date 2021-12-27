@@ -249,7 +249,7 @@
 
 .preview img {
   max-width: 380px;
-  width: 19em;
+  width: 100%;
   margin-right: 30px;
 }
 
@@ -678,8 +678,6 @@
 }
 
 .popup {
-  width: 100vw;
-  height: 100vh;
   position: fixed;
   display: none;
   top: 0;
@@ -951,6 +949,11 @@
    margin-right: 0;
  }
 
+ .main {
+   width: calc(100% - 270px - 35px);
+   justify-content: space-between;
+ }
+
   .preview img {
     margin-right: 0;
   }
@@ -1079,13 +1082,16 @@
     margin-right: auto;
   }
 
+  .main {
+    width: 100%;
+  }
+
   .preview:nth-child(n+2) {
     margin-top: 35px;
   }
 
   .preview img {
-    max-width: 330px;
-    width: 100vw;
+    width: 100%;
     margin-right: 0;
     margin-bottom: 15px;
   }
